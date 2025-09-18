@@ -1,0 +1,23 @@
+- Use maven shade plugin to make fat Jar (basically jar with all dependencies)
+
+- test with sam locally (requires docker)
+    - create template.yaml
+    - sam local invoke functionName -e eventNameFile.json
+
+- Creating and attaching role
+    - aws iam create-role --role-name lambda-exec-role --assume-role-policy-document file://trust-policy.json (trust-policy.json is file I created)
+    - aws iam attach-role-policy --role-name lambda-exec-role --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+- Deploying with AWS CLI
+    - aws lambda create-function \
+        --function-name FunctionName \
+        --runtime java17 \
+        --handler com.example.WhateverClassContainsYourHandler::handleRequest \
+        --zip-file fileb://target/saveUser-lambda-1.0-SNAPSHOT.jar (you get this by mvn clean package) \
+        --role arn:aws:iam::123456789012:role/lambda-exec-role (role arn name)
+- Invoke Lambda
+    - aws lambda invoke \
+        --function-name FunctionName \
+        --payload file://event.json (file that contains payload)\
+        --cli-binary-format raw-in-base64-out \
+        response.json (output file)

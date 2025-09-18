@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  SaveUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.example.SaveUserLambda::handleRequest
+      Runtime: java21
+      CodeUri: target/saveUser-lambda-1.0-SNAPSHOT.jar
+      MemorySize: 512
+      Timeout: 15
