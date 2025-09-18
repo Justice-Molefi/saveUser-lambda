@@ -21,3 +21,7 @@
         --payload file://event.json (file that contains payload)\
         --cli-binary-format raw-in-base64-out \
         response.json (output file)
+
+- Deploy with SAM
+    - sam build
+    - sam deploy --guided

@@ -4,6 +4,7 @@ Resources:
   SaveUserFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: SaveUserLambda
       Handler: com.example.SaveUserLambda::handleRequest
       Runtime: java21
       CodeUri: target/saveUser-lambda-1.0-SNAPSHOT.jar
