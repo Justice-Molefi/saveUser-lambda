@@ -1,0 +1,36 @@
+Dynamo DB
+ - How do I connect to the db??
+ - How do I manage connections
+ - How do I CRUD to the database??
+ - Can I set entity structure in advance??
+
+
+  {
+    "Users" : {
+        "3e8hiwerhID": {
+            "firstName" : "Some Nonsense",
+            "lastName" : "Some more nonsense"
+        },
+        "3e8hiwerhID": {
+            "firstName" : "Some Nonsense",
+            "lastName" : "Some more nonsense"
+        }
+    }
+  }
+
+
+
+So there is data, and we need ways to access this data,,,, various ways depending on usage...
+so we may structure data a certain way so can access it faster... or so we can reduce cpu cycles...
+... Each storage service or technology has ways to achieve all these things....
+That is why we have access patterns....
+
+
+AWS CLI--
+local communicating with remote --- errors can happen
+Is it sync or async ??
+How can long I wait before getting a response??
+What are different errors I can encounter??
+How much data can I view in AWS CLI ??
+Is there a memory limit ??
+
